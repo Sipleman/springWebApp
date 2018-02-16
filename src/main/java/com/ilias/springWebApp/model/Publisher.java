@@ -10,12 +10,7 @@ public class Publisher {
     private Long id;
     private String name;
 
-    @OneToOne
-    private Book book;
 
-    public Book getBook() {
-        return book;
-    }
 
     public Publisher() {
     }
@@ -25,15 +20,11 @@ public class Publisher {
         this.name = name;
     }
 
-    public Publisher(Long id, String name, Book book) {
+    public Publisher(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.book = book;
     }
 
-    public Book getBooks() {
-        return book;
-    }
 
     public Long getId() {
         return id;
@@ -51,7 +42,5 @@ public class Publisher {
         this.name = name;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
-    }
+
 }

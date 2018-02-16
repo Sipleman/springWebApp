@@ -28,20 +28,31 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     private void initData(){
-        Author author1 = new Author("Kendrik", "LAMAR");
-        Publisher p1 = new Publisher("Romans");
-        publisherRepository.save(p1);
+        Publisher p1 = new Publisher("Dutton");
+        Publisher p2 = new Publisher("Maxwell perkins");
+        Publisher p3 = new Publisher("EGF");
 
-        Book book1 = new Book("Very nice book","1423", p1);
+        publisherRepository.save(p1);
+        publisherRepository.save(p2);
+        publisherRepository.save(p3);
+
+        Author author1 = new Author("Stephen", "King");
+        Book book1 = new Book("Shine","1423", p1);
         author1.getBooks().add(book1);
-        authorRepository.save(author1);
         bookRepository.save(book1);
-        Author author2 = new Author("Kendrik", "LAMAR");
-        Publisher p2 = new Publisher("Another");
-        Book book2 = new Book("Very nice book", "1424", p2);
+        authorRepository.save(author1);
+
+        Author author2 = new Author("Ernest", "Hemingway");
+        Book book2 = new Book("For whom the bell calls", "1424", p2);
         author2.getBooks().add(book2);
         authorRepository.save(author2);
-        publisherRepository.save(p2);
         bookRepository.save(book2);
+
+        Author author3 = new Author("Fyodor", "Dostoevsky");
+        Book book3 = new Book("Idiot", "4123", p3);
+        author3.getBooks().add(book3);
+        authorRepository.save(author3);
+        bookRepository.save(book3);
+
     }
 }
